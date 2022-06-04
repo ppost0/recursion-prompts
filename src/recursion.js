@@ -124,9 +124,12 @@ var exponent = function(base, exp) {
   }
 
   if (exp < 0) {
-    return 1/base * exponent(base, exp + 1);
+    var result = ((1 / base) * exponent(base, exp + 1));
+    result = result * 100;
+    result = result.toFixed(3);
+    result = result / 100;
+    return result;
   }
-
 
 };
 
